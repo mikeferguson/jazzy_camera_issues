@@ -16,10 +16,10 @@ class ImageSub : public rclcpp::Node
 
       if (use_best_effort)
         subscription_ = this->create_subscription<sensor_msgs::msg::Image>(
-          "head_camera/rgb/image_raw", rclcpp::QoS(10).best_effort(), std::bind(&ImageSub::topic_callback, this, _1));
+          "image_raw", rclcpp::QoS(10).best_effort(), std::bind(&ImageSub::topic_callback, this, _1));
       else
         subscription_ = this->create_subscription<sensor_msgs::msg::Image>(
-          "head_camera/rgb/image_raw", rclcpp::QoS(10), std::bind(&ImageSub::topic_callback, this, _1));
+          "image_raw", rclcpp::QoS(10), std::bind(&ImageSub::topic_callback, this, _1));
     }
 
   private:

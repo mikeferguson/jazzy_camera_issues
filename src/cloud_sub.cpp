@@ -10,7 +10,7 @@ class CloudSub : public rclcpp::Node
 {
   public:
     CloudSub()
-    : Node("camera_hz")
+    : Node("cloud_sub")
     {
       bool use_best_effort = this->declare_parameter<bool>("best_effort", true);
 
